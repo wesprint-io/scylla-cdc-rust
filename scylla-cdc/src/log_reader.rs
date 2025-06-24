@@ -410,6 +410,12 @@ impl CDCLogReaderBuilder {
         self
     }
 
+    /// Set consistency of the read from the log
+    pub fn consistency(mut self, consistency: Consistency) -> Self {
+        self.consistency = Some(consistency);
+        self
+    }
+
     /// Build the CDCLogReader after setting all the options
     /// It will fail with an error message if all the required fields are not set.
     /// Currently required fields are the following:
